@@ -9,15 +9,14 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  height: 45px; 
+  height: 45px;
+  box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
 }
 
-.navbar.scrolled {
-  background-color: rgba(36, 59, 57, 0.1); /* transparent dark */
-  -webkit-backdrop-filter: blur(6px);     /* for Safari/iOS */
-  backdrop-filter: blur(6px);             /* standard */
-  border-bottom: 1px solid #66F2E4;       /* shiny teal line */
-  transition: background-color 0.3s ease, border-bottom 0.3s ease;
+/* When scrolled down */
+.navbar.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(36, 59, 57, 0.5);
 }
 
 .nav-container {
