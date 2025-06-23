@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.why-polyglot-section {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: #e0f2f1; /* teal-tinted white */
+  box-shadow: 0 0 30px rgba(0, 240, 192, 0.1);
+  margin-top: 4rem;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.section-heading:hover {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(94, 234, 212, 0.6), 0 0 12px rgba(94, 234, 212, 0.3);
+}
+
+.manifesto {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #cbd5e1;
+}
+
+.value-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.value-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 12px rgba(94, 234, 212, 0.1);
+}
+
+.get-in-touch-wrapper {
+  margin-top: 1.5rem;
+}
+
+.get-in-touch-button {
+  background-color: #00f0c0;
+  color: #000;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 240, 192, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.get-in-touch-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 240, 192, 0.6);
+}

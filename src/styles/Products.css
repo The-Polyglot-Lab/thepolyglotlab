@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.h1{
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.product-card {
+    background: rgba(36, 43, 57, 0.85); /* semi-transparent dark base */
+    margin-top: 50px;
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    max-width: 720px;
+    width: 100%;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.product-button-wrapper {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.product-button {
+  background-color: #00f0c0;
+  color: #000;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 240, 192, 0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.product-card h2 {
+    font-size: 2.25rem;
+    font-weight: 550;
+    line-height: 1.3;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.product-gif {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-height: 360px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
+}
+
+.product-card h2:hover {
+  text-shadow: 0 0 0px rgba(94, 234, 212, 0.6), 0 0 12px rgba(94, 234, 212, 0.3);
+}
+
+.tagline {
+  font-size: 1.125rem; /* text-base */
+  font-style: italic;
+  color: #cbd5e1; /* slate-300 */
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  /* subtle glow */
+  text-shadow: 0 0 4px rgba(94, 234, 212, 0.4); /* teal glow */
+  transition: text-shadow 0.3s ease-in-out;
+}
+
+.tagline:hover {
+  text-shadow: 0 0 6px rgba(94, 234, 212, 0.6), 0 0 12px rgba(94, 234, 212, 0.3);
+}
+
+.bullet-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: #e2e8f0; /* slate-200 */
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: transform 0.2s ease;
+}
+
+.bullet-list li::before {
+  content: '⚡'; /* or try: '▹' or '🞂' or '–' */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #5eead4; /* teal-300 */
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.bullet-list li:hover {
+  transform: translateX(2px);
+}
+
+.bullet-list li:hover::before {
+  color: #2dd4bf; /* teal-400 */
+}
+
