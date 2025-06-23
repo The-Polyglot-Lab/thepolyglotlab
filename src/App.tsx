@@ -6,6 +6,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero'
 import Problemsolution from './components/Problemsolution';
+import Products from './components/Products';
+import Whyus from './components/Whyus';
+import Testimonials from './components/Testimonials';
+import Technology from './components/Technology';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -15,6 +19,10 @@ function App() {
     <Navbar/>
     <Hero/>
     <Problemsolution/>
+    <Products/>
+    <Whyus/>
+    <Testimonials/>
+    <Technology/>
     </>
   )
 }
