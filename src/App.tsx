@@ -28,10 +28,10 @@ function App() {
         productsRef={productsRef}
         footerRef={footerRef}
       />
-      <Hero/>
+      <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
       <Problemsolution/>
       <Products ref={productsRef}/>
-      <Whyus/>
+      <Whyus footerRef={footerRef}/>
       <Testimonials ref={testimonialsRef}/>
       <Technology/>
       <OurStory ref={ourStoryRef}/>
