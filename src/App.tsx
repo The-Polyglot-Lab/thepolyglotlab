@@ -14,19 +14,28 @@ import OurStory from './components/OurStory';
 
 function App() {
     const [count, setCount] = useState(0)
+    const ourStoryRef = useRef<HTMLDivElement | null>(null);
+    const testimonialsRef = useRef<HTMLElement | null>(null);
+    const productsRef = useRef<HTMLDivElement | null>(null);
+    const footerRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
       <CircuitBackground />
-      <Navbar/>
+      <Navbar 
+        ourStoryRef={ourStoryRef}
+        testimonialsRef={testimonialsRef}
+        productsRef={productsRef}
+        footerRef={footerRef}
+      />
       <Hero/>
       <Problemsolution/>
-      <Products/>
+      <Products ref={productsRef}/>
       <Whyus/>
-      <Testimonials/>
+      <Testimonials ref={testimonialsRef}/>
       <Technology/>
-      <OurStory/>
-      <Footer/>
+      <OurStory ref={ourStoryRef}/>
+      <Footer ref={footerRef}/>
     </>
   )
 }
