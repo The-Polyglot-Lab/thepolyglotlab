@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import CircuitBackground from './components/CircuitBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero'
 import Problemsolution from './components/Problemsolution';
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <>
+      <CircuitBackground />
       <Navbar/>
       <Hero/>
       <Problemsolution/>
