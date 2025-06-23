@@ -15,7 +15,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => (
           </p>
         </div>
 
-        {/* Middle/right section: links */}
+        {/* Middle/right section: links 
         <div className="footer-column">
           <h4>Navigation</h4>
           <ul>
@@ -25,6 +25,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => (
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
+        */}
 
         <div className="footer-column">
           <h4>What We Do</h4>
