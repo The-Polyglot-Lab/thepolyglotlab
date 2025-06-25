@@ -10,7 +10,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://thepolyglotlab.onrender.com:8080/contact", {
+      const response = await fetch("http://thepolyglotlab.onrender.com:10000/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
