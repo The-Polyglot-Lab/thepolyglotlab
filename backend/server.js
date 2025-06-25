@@ -3,8 +3,14 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const cors = require('cors');
 
+
 const app = express();
-app.use(cors());
+app.use(cors({ 
+  origin: [
+    "https://thepolyglotlab.com",
+    "https://www.thepolyglotlab.com"
+  ] 
+}));
 app.use(express.json());
 
 app.post('/contact', async (req, res) => {
