@@ -11,6 +11,8 @@ import Testimonials from './components/Testimonials';
 import Technology from './components/Technology';
 import Footer from './components/Footer';
 import OurStory from './components/OurStory';
+import Modal from './components/Modal';
+import ContactForm from './components/ContactForm';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -18,6 +20,7 @@ function App() {
     const testimonialsRef = useRef<HTMLElement | null>(null);
     const productsRef = useRef<HTMLDivElement | null>(null);
     const footerRef = useRef<HTMLDivElement | null>(null);
+    const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -27,6 +30,7 @@ function App() {
         testimonialsRef={testimonialsRef}
         productsRef={productsRef}
         footerRef={footerRef}
+        onOpenContact={() => setShowModal(true)} 
       />
       <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
       <Problemsolution/>
@@ -35,7 +39,10 @@ function App() {
       <Testimonials ref={testimonialsRef}/>
       <Technology/>
       <OurStory ref={ourStoryRef}/>
-      <Footer ref={footerRef}/>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <ContactForm />
+      </Modal>
+      <Footer ref={footerRef} onContactClick={() => setShowModal(true)}/>
     </>
   )
 }

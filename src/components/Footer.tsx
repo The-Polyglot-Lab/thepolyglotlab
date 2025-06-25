@@ -2,7 +2,11 @@ import React, { forwardRef } from "react";
 import tplLogo from "../assets/ThePolyglotLabLogo_compressed.jpg"; 
 import '../styles/Footer.css';
 
-const Footer = forwardRef<HTMLDivElement>((props, ref) => (
+interface FooterProps {
+  onContactClick: () => void;
+}
+
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({ onContactClick }, ref) => (
   <div className="footer-wrapper" ref={ref}>
     <div className="footer-inner">
       <div className="footer-content">
@@ -45,6 +49,7 @@ const Footer = forwardRef<HTMLDivElement>((props, ref) => (
             <li><a href="mailto:support@thepolyglotlab.com">support@thepolyglotlab.com</a></li>
             <li>Lincoln, United Kingdom</li>
           </ul>
+          <button className="foot-link-cont-btn" onClick={onContactClick}>Contact Us</button>
         </div>
       </div>
 
