@@ -23,8 +23,8 @@ app.post('/contact', async (req, res) => {
     });
 
     const mailOptions = {
-        from: `"Polyglot Lab" <${process.env.EMAIL_USER}>`, // always send FROM your verified address
-        to: ['yor@thepolyglotlab.com', 'alessandra@thepolyglotlab.com', 'yor.francavilla@gmail.com'],
+        from: `"Polyglot Lab" <${process.env.EMAIL_USER}>`, 
+        to: ['yor@thepolyglotlab.com', 'alessandra@thepolyglotlab.com'],
         replyTo: process.env.EMAIL_USER, // this makes "reply" go to the user
         subject: 'New Contact Form Submission',
         text: `Contact Name: ${name}\n\nEmail: ${email}\n\nOriginal Message: \n${message}`,
