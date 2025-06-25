@@ -1,42 +1,42 @@
 import { useState } from 'react';
 import '../styles/ContactForm.css';
-
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState(""); // optional for feedback
 
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('Sending...');
 
     try {
-      const res = await fetch('https://your-backend-url.onrender.com/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+      const response = await fetch("http://localhost:8080/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
       });
 
-      if (res.ok) {
-        setStatus('Message sent!');
-        setFormData({ name: '', email: '', message: '' });
+      if (response.ok) {
+        setStatus("Message sent! 🚀");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
-        throw new Error('Network error');
+        setStatus("Something went wrong. 😬");
       }
-    } catch (err) {
-      setStatus('Something went wrong!');
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus("Error sending message. 😔");
     }
   };
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-        <input type="text" name="name" placeholder="Your name" required />
-        <input type="email" name="email" placeholder="Your email" required />
-        <textarea name="message" placeholder="Your message" rows={5} required />
-        <button type="submit">Send</button>
+      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" required />
+      <input value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" type="email" required />
+      <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Message" required />
+      <button type="submit">Send</button>
+      {status && <p>{status}</p>}
     </form>
   );
 };
