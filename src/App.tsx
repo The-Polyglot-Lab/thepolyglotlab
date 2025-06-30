@@ -32,13 +32,15 @@ function App() {
         footerRef={footerRef}
         onOpenContact={() => setShowModal(true)} 
       />
-      <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
-      <Problemsolution/>
-      <Products ref={productsRef}/>
-      <Whyus footerRef={footerRef}/>
-      <Testimonials ref={testimonialsRef}/>
-      <Technology/>
-      <OurStory ref={ourStoryRef}/>
+      <main className="main-content">
+        <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
+        <Problemsolution/>
+        <Products ref={productsRef}/>
+        <Whyus footerRef={footerRef}/>
+        <Testimonials ref={testimonialsRef}/>
+        <Technology/>
+        <OurStory ref={ourStoryRef}/>
+      </main>
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ContactForm />
       </Modal>

@@ -17,6 +17,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global box-sizing fix */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure all sections are properly contained */
+section, div, main, article {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -28,15 +39,35 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  width: 100%;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slightly smaller base font for mobile */
+  }
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+/* Mobile responsive h1 */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
 }
 
 button {

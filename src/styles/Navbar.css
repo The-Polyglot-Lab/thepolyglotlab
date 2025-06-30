@@ -131,3 +131,49 @@
   transform: translateY(-2px);
   
 }
+
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 1rem;
+  }
+  .nav-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 100%;
+    min-width: 0;
+    margin-left: auto;
+    overflow: visible;
+  }
+  .nav-link-btn, .nav-link-cont-btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.6rem;
+    min-width: 70px;
+    max-width: 120px;
+    white-space: nowrap;
+    margin: 0;
+    height: auto;
+    box-sizing: border-box;
+    flex: 1 1 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  /* Hide Success Stories if not enough space */
+  @media (max-width: 430px) {
+    .nav-link-btn:nth-child(2) {
+      display: none;
+    }
+    .nav-link-btn:nth-child(1) {
+      display: none;
+    }
+  }
+}

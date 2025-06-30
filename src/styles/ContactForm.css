@@ -13,6 +13,20 @@
   font-family: 'Space Grotesk', sans-serif;
 }
 
+/* Mobile responsive contact-form */
+@media (max-width: 768px) {
+  .contact-form {
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 1rem;
+  }
+}
+
 .contact-form input,
 .contact-form textarea {
   background-color: rgba(255, 255, 255, 0.05);
@@ -24,6 +38,23 @@
   transition: border 0.2s, box-shadow 0.2s;
   resize: none;
   font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Mobile responsive form inputs */
+@media (max-width: 768px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.7rem 0.875rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.625rem 0.75rem;
+    font-size: 0.9rem;
+  }
 }
 
 .contact-form input:focus,
@@ -44,6 +75,22 @@
   cursor: pointer;
   transition: background 0.3s ease;
   font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Mobile responsive button */
+@media (max-width: 768px) {
+  .contact-form button {
+    padding: 0.8rem 1rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form button {
+    padding: 0.7rem 0.875rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
 }
 
 .contact-form button:hover {
