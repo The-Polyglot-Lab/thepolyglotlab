@@ -11,9 +11,11 @@ const CircuitBackground = () => (
     top: 0,
     left: 0,
     zIndex: -1,
-    width: '100vw',
+    width: '100%',
     height: '100vh',
     pointerEvents: 'none',
+    maxWidth: '100vw',
+    overflow: 'hidden',
   }}>
     {/* Main animated circuits with more green and casual patterns */}
     <path>
