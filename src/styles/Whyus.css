@@ -9,7 +9,7 @@
   text-align: center;
   color: #e0f2f1; /* teal-tinted white */
   box-shadow: 0 0 30px rgba(0, 240, 192, 0.1);
-  /* margin-top: 4rem; */
+   margin-top: 4rem; 
   /* max-width: 720px; */
   /* margin-left: auto; */
   /* margin-right: auto; */
@@ -19,7 +19,7 @@
 @media (max-width: 768px) {
   .why-polyglot-section {
     padding: 3rem 1rem;
-    margin-top: 3rem;
+    margin-top: 4rem;
     max-width: 100%;
   }
 }
@@ -146,7 +146,10 @@
 }
 
 .get-in-touch-wrapper {
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
+  overflow-x: hidden;
+  max-height: 100px;
+  overflow: visible;
 }
 
 .get-in-touch-button {
@@ -167,6 +170,7 @@
     font-size: 0.9rem;
     width: 100%;
     max-width: 280px;
+    overflow: visible;
   }
 }
 
