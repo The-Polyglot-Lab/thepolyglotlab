@@ -170,7 +170,7 @@
     font-size: 0.9rem;
     width: 100%;
     max-width: 280px;
-    max-height: 100px;
+    overflow: visible;
   }
 }
 
