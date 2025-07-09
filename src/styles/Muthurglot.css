@@ -13,20 +13,30 @@
     bottom: 2rem;
     right: 2rem;
     z-index: 1000;
-    padding: 1rem 1.5rem;
+    padding-left: 3rem;
+    padding-right: 0;
+    padding-top: 1.75rem;
+    padding-bottom: 0.25rem;
     background: rgba(0, 240, 192, 0.8);
-    border-radius: 50px;
-    box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
+    border-radius: 2rem;
+    box-shadow: 0 0 24px rgba(0, 240, 192, 0.18);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(.4,2,.6,1);
     border: 2px solid rgba(0, 240, 192, 0.5);
+    min-width: 320px;
+    min-height: 1rem;
+    max-height: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
 }
 
-.muthurglot:hover {
+/*.muthurglot:hover {
     transform: scale(1.05);
     box-shadow: 0 0 60px rgba(0, 240, 192, 0.5);
     background: rgba(0, 0, 0, 0.9);
-}
+}*/
 
 .balloon-icon {
     font-family: 'VT323', monospace;
@@ -46,4 +56,31 @@
     to {
         text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.6);
     }
+}
+
+.muthurglot-button {
+    font-family: 'VT323', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    background: #111;
+    border: 2px solid #00f0c0;
+    border-radius: 2rem;
+    min-height: 1rem;
+    max-height: 2.8rem;
+    padding: 1rem 1.75rem;
+    box-shadow: 0 2px 12px rgba(0, 240, 192, 0.10);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.muthurglot-button:hover, .muthurglot-button:focus {
+    background: #222;
+    box-shadow: 0 4px 24px rgba(0, 240, 192, 0.18);
+    color: #00f0c0;
+    border-color: #00f0c0;
 }
