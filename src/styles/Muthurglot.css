@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.muthurglot {
+    font-family: 'VT323', monospace;
+    font-size: 1rem;
+    font-weight: 100;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    padding: 1rem 1.5rem;
+    background: rgba(0, 240, 192, 0.8);
+    border-radius: 50px;
+    box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(0, 240, 192, 0.5);
+}
+
+.muthurglot:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 60px rgba(0, 240, 192, 0.5);
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.balloon-icon {
+    font-family: 'VT323', monospace;
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    display: inline-block;
+    transform: rotate(90deg);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+    }
+    to {
+        text-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+}

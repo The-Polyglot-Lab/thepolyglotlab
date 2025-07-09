@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import OurStory from './components/OurStory';
 import Modal from './components/Modal';
 import ContactForm from './components/ContactForm';
+import Muthurglot from './components/Muthurglot';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -45,6 +46,7 @@ function App() {
         <ContactForm />
       </Modal>
       <Footer ref={footerRef} onContactClick={() => setShowModal(true)}/>
+      <Muthurglot/>
     </>
   )
 }
