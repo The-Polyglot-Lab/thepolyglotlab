@@ -13,7 +13,9 @@ import Footer from './components/Footer';
 import OurStory from './components/OurStory';
 import Modal from './components/Modal';
 import ContactForm from './components/ContactForm';
-import Muthurglot from './components/Muthurglot';
+//import Muthurglot from './components/Muthurglot';
+import Whatwedo from './components/Whatwedo';
+import CallToAction from './components/CallToAction';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -36,17 +38,19 @@ function App() {
       <main className="main-content">
         <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
         <Problemsolution/>
+        <Whatwedo/>
+        <Technology/>
         <Products ref={productsRef}/>
         <Whyus footerRef={footerRef}/>
         <Testimonials ref={testimonialsRef}/>
-        <Technology/>
+        <CallToAction/>
         <OurStory ref={ourStoryRef}/>
       </main>
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ContactForm />
       </Modal>
       <Footer ref={footerRef} onContactClick={() => setShowModal(true)}/>
-      <Muthurglot/>
+      {/* <Muthurglot/> */}
     </>
   )
 }

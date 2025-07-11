@@ -32,10 +32,9 @@ export default function TechStackShowcase() {
   return (
     <section className="tech-stack-section">
       <div className="tech-card">
-        <h2 className="section-heading">Built With Purpose</h2>
+        <h2 className="section-heading">Our Stack</h2>
         <p className="tech-description">
-            Every tool and service we use is selected for performance, privacy, and scalability — not buzzwords.
-            From secure cloud infra to clean UI, and yes, killer marketing integrations too.
+            We use tools that scale — fast, secure, and battle-tested across real-world use cases.
         </p>
         <div className="tech-grid">
             {stack.map((item, index) => (
