@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+.cta-section {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  color: #e0f2f1; /* teal-tinted white */
+  box-shadow: 0 0 30px rgba(0, 240, 192, 0.1);
+   margin-top: 4rem; 
+   margin-bottom: 4rem;
+  /* max-width: 720px; */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+}
+
+/* Mobile responsive why-polyglot-section */
+@media (max-width: 768px) {
+  .cta-section {
+    padding: 3rem 1rem;
+    margin-top: 4rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 2rem 0.75rem;
+    margin-top: 2rem;
+  }
+}
+
+.section-heading {
+  font-size: 2.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Mobile responsive section-heading */
+@media (max-width: 768px) {
+  .section-heading {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: 1.75rem;
+  }
+}
+
+.section-heading:hover {
+  font-size: 2.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(94, 234, 212, 0.6), 0 0 12px rgba(94, 234, 212, 0.3);
+}
+
+/* Mobile responsive hover */
+@media (max-width: 768px) {
+  .section-heading:hover {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-heading:hover {
+    font-size: 1.75rem;
+  }
+}
+
+.manifesto {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  color: #cbd5e1;
+}
+
+/* Mobile responsive manifesto */
+@media (max-width: 768px) {
+  .manifesto {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .manifesto {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+
+.get-in-touch-wrapper {
+  margin-top: 2.5rem;
+  overflow-x: hidden;
+  max-height: 100px;
+  overflow: visible;
+}
+
+.cta-button {
+  background-color: #007AFF;
+  color: #FFFFFF;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0, 240, 192, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Mobile responsive button */
+@media (max-width: 480px) {
+  .cta-button {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    overflow: visible;
+  }
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #4FFFD2, #C084FC); /* Mint to purple */
+  box-shadow: 0 0 20px rgba(0, 240, 192, 0.6);
+}
