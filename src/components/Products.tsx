@@ -33,9 +33,19 @@ const Products = forwardRef<HTMLDivElement>((props, ref) => (
                         <li key={idx}>{bullet}</li>
                     ))}
                 </ul>
-                {product.gif && (
-                    <img src={product.gif} alt={`${product.name} demo`} className="product-gif" />
-                )}
+                {/* Replace GIF with YouTube video iframe */}
+                <div className="product-video-wrapper">
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/vuTlsm4QaeA"
+                        title={`${product.name} demo video`}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                        className="product-video-iframe"
+                    ></iframe>
+                </div>
                 {product.cta && (
                     <div className="product-button-wrapper">
                         <a href={product.cta.link} className="product-button" target="_blank" rel="noopener noreferrer" >
