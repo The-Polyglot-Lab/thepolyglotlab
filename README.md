@@ -1,55 +1,64 @@
-# React + TypeScript + Vite
+# The Polyglot Lab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The Polyglot Lab builds fast, human-first AI tools, automation, and websites for contractors, founders, and businesses. We deliver custom solutions in AI, machine learning, automation, and web development—helping you save time and focus on what matters.
 
-Currently, two official plugins are available:
+- **Indie, privacy-first, and focused on real outcomes**
+- **Based in Lincoln, United Kingdom**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## What We Do
+- AI integration and custom automation
+- Machine learning model implementation
+- Website and app design & development
+- MVP prototyping and technical prototyping
+- Slack bots and internal tools
 
-## Expanding the ESLint configuration
+## Why Polyglot Lab?
+- ⚡ Fast MVPs and product launches
+- 🛡️ Privacy-first, no shady tactics
+- 🤝 Human by default—real people, real support
+- 💡 Indie spirit, no bloat, no buzzwords
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
+- **Frontend:** React, TypeScript, Vite, TailwindCSS
+- **Backend:** Node.js, Express, Nodemailer
+- **Other:** Slack integrations, OpenAI, custom automation
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Project Structure
+- `/src` — Frontend React app
+- `/backend` — Node.js/Express backend (contact form, API)
+- `/muthurglot` — (Subproject for advanced/AI features)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/The-Polyglot-Lab/thepolyglotlab.git
+   cd thepolyglotlab
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Run the frontend:**
+   ```bash
+   npm run dev
+   ```
+4. **Run the backend:**
+   ```bash
+   cd backend
+   npm install
+   npm run dev
+   ```
+5. *(Optional)* **Run muthurglot backend:**
+   ```bash
+   cd muthurglot/backend
+   npm install
+   npm run dev
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Contact
+- Email: [support@thepolyglotlab.com](mailto:support@thepolyglotlab.com)
+- Location: Lincoln, United Kingdom
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
-# The Polyglot Lab LTD
+## License
+ISC
