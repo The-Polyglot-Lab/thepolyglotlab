@@ -16,6 +16,7 @@ import ContactForm from './components/ContactForm';
 //import Muthurglot from './components/Muthurglot';
 import Whatwedo from './components/Whatwedo';
 import CallToAction from './components/CallToAction';
+import FloatingWidget from './components/FloatingWidget';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -46,6 +47,7 @@ function App() {
         <CallToAction/>
         <OurStory ref={ourStoryRef}/>
       </main>
+      <FloatingWidget />
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ContactForm />
       </Modal>

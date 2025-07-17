@@ -16,8 +16,8 @@ export default function Hero({ productsRef, ourStoryRef }: HeroProps) {
 
   return (
       <div className="hero-card">
-        <h1>“We don’t ship features. We ship solutions.”</h1>
-        <p><b>Indie-built tools that solve real pain for modern teams.</b></p>
+        <h1>“Time is precious. We build tools that help you save it.”</h1>
+        <p><b>Clean. Fast. Thoughtful. Built so you and your users stop wasting hours and start gaining momentum.</b></p>
         <p className="statement">Smart tools. No fluff. Real outcomes.</p>
         <div className="hero-buttons">
           <a href="#products" onClick={(e) => handleScrollTo(productsRef, e)}>View Products</a>
