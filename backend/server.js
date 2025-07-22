@@ -8,7 +8,9 @@ const app = express();
 app.use(cors({ 
   origin: [
     "https://thepolyglotlab.com",
-    "https://www.thepolyglotlab.com"
+    "https://www.thepolyglotlab.com",
+    "https://escalation-ninja.com",
+    "https://www.escalation-ninja.com"
   ] 
 }));
 app.use(express.json());
