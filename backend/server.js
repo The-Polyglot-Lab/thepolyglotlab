@@ -21,6 +21,15 @@ app.post('/contact', async (req, res) => {
   if (!name || !email || !message)
     return res.status(400).json({ error: 'Missing fields' });
 
+  // Determine subject based on origin
+  let subject = 'New Contact Form Submission';
+  const origin = req.headers.origin;
+  if (origin === 'https://thepolyglotlab.com' || origin === 'https://www.thepolyglotlab.com') {
+    subject = 'TPL | New Contact Form Submission';
+  } else if (origin === 'https://escalation-ninja.com' || origin === 'https://www.escalation-ninja.com') {
+    subject = 'EN | New Enquiry Submitted';
+  }
+
   try {
     const transporter = nodemailer.createTransport({
       service: 'Gmail',
@@ -34,7 +43,7 @@ app.post('/contact', async (req, res) => {
         from: `"Polyglot Lab" <${process.env.EMAIL_USER}>`, 
         to: ['yor@thepolyglotlab.com', 'alessandra@thepolyglotlab.com'],
         replyTo: process.env.EMAIL_USER, // this makes "reply" go to the user
-        subject: 'New Contact Form Submission',
+        subject: subject,
         text: `Contact Name: ${name}\n\nEmail: ${email}\n\nOriginal Message: \n${message}`,
     };
 
