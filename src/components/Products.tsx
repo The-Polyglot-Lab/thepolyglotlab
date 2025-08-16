@@ -34,14 +34,16 @@ const Products = forwardRef<HTMLDivElement>((props, ref) => (
                         <li key={idx}>{bullet}</li>
                     ))}
                 </ul>
-                {/* Custom video player for EN-New.mp4 */}
+                {/* Custom video player for EN-New.mp4 from S3 */}
                 <div className="product-video-wrapper">
                     <VideoPlayer
-                        src="../src/assets/EN-New.mp4"
+                        src="https://tpl-assets.s3.us-east-1.amazonaws.com/EN-New.mp4"
                         title={`${product.name} demo video`}
                         width={560}
                         height={315}
                         muted={false}
+                        controls={true}
+                        autoPlay={false}
                     />
                 </div>
                 {product.cta && (
