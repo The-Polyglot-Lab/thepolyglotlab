@@ -1,6 +1,7 @@
 import React, { forwardRef } from 'react';
 import '../styles/Products.css';
 import escalation_ninja_demo from '../assets/escalation_ninja_demo.gif';
+import VideoPlayer from './VideoPlayer';
 
 const products = [
   {
@@ -33,18 +34,15 @@ const Products = forwardRef<HTMLDivElement>((props, ref) => (
                         <li key={idx}>{bullet}</li>
                     ))}
                 </ul>
-                {/* Replace GIF with YouTube video iframe */}
+                {/* Custom video player for EN-New.mp4 */}
                 <div className="product-video-wrapper">
-                    <iframe
-                        width="560"
-                        height="315"
-                        src="https://www.youtube.com/embed/vuTlsm4QaeA"
+                    <VideoPlayer
+                        src="../src/assets/EN-New.mp4"
                         title={`${product.name} demo video`}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowFullScreen
-                        className="product-video-iframe"
-                    ></iframe>
+                        width={560}
+                        height={315}
+                        muted={false}
+                    />
                 </div>
                 {product.cta && (
                     <div className="product-button-wrapper">

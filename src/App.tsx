@@ -16,6 +16,7 @@ import ContactForm from './components/ContactForm';
 //import Muthurglot from './components/Muthurglot';
 import Whatwedo from './components/Whatwedo';
 import CallToAction from './components/CallToAction';
+import Blog from './components/Blog';
 import FloatingWidget from './components/FloatingWidget';
 
 function App() {
@@ -40,11 +41,13 @@ function App() {
         <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
         <Problemsolution/>
         <Whatwedo/>
+        <Blog />
         <Technology/>
         <Products ref={productsRef}/>
         <Whyus footerRef={footerRef}/>
         <Testimonials ref={testimonialsRef}/>
         <CallToAction/>
+        
         <OurStory ref={ourStoryRef}/>
       </main>
       <FloatingWidget />
