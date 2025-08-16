@@ -39,8 +39,6 @@ const Products = forwardRef<HTMLDivElement>((props, ref) => (
                     <VideoPlayer
                         src="https://tpl-assets.s3.us-east-1.amazonaws.com/EN-New.mp4"
                         title={`${product.name} demo video`}
-                        width={560}
-                        height={315}
                         muted={false}
                         controls={true}
                         autoPlay={false}

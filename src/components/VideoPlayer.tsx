@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import '../styles/VideoPlayer.css';
 
 interface VideoPlayerProps {
@@ -30,6 +30,19 @@ export default function VideoPlayer({
   const [duration, setDuration] = useState(0);
   const [volume, setVolume] = useState(1);
 
+  // Handle spacebar for play/pause
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.code === 'Space' && videoRef.current) {
+        e.preventDefault(); // Prevent page scrolling
+        handlePlayPause();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyPress);
+    return () => document.removeEventListener('keydown', handleKeyPress);
+  }, [isPlaying]);
+
   const handlePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -39,6 +52,11 @@ export default function VideoPlayer({
       }
       setIsPlaying(!isPlaying);
     }
+  };
+
+  // Handle video click/tap for play/pause
+  const handleVideoClick = () => {
+    handlePlayPause();
   };
 
   const handleTimeUpdate = () => {
@@ -89,7 +107,9 @@ export default function VideoPlayer({
           loop={loop}
           onTimeUpdate={handleTimeUpdate}
           onLoadedMetadata={handleLoadedMetadata}
+          onClick={handleVideoClick}
           className="video-element"
+          style={{ cursor: 'pointer' }}
         />
         
         {controls && (
