@@ -167,6 +167,12 @@
     justify-content: center;
     display: flex;
   }
+  
+  /* Hide Blog button on mobile */
+  .blog-btn {
+    display: none !important;
+  }
+  
   /* Hide Success Stories if not enough space */
   @media (max-width: 430px) {
     .nav-link-btn:nth-child(2) {

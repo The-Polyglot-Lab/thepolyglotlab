@@ -24,7 +24,7 @@ app.post('/contact', async (req, res) => {
   // Determine subject based on origin
   let subject = 'New Contact Form Submission';
   const origin = req.headers.origin;
-  if (origin === 'https://thepolyglotlab.com' || origin === 'https://www.thepolyglotlab.com') {
+  if (origin === 'https://thepolyglotlab.com' || origin === 'https://www.thepolyglotlab.com' || origin === 'https://blog.thepolyglotlab.com') {
     subject = 'TPL | New Contact Form Submission';
   } else if (origin === 'https://escalation-ninja.com' || origin === 'https://www.escalation-ninja.com') {
     subject = 'EN | New Enquiry Submitted';

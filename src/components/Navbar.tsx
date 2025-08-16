@@ -39,6 +39,7 @@ function Navbar({ ourStoryRef, testimonialsRef, productsRef, footerRef, onOpenCo
           <button className="nav-link-btn" onClick={() => handleScrollTo(ourStoryRef)}>About Us</button>
           <button className="nav-link-btn" onClick={() => handleScrollTo(testimonialsRef)}>Success Stories</button>
           <button className="nav-link-btn" onClick={() => handleScrollTo(productsRef)}>Our Products</button>
+          <button className="nav-link-btn blog-btn" style={{ marginRight: '20px' }} onClick={() => window.open('https://blog.thepolyglotlab.com', '_blank')}>Blog</button>
           <button className="nav-link-cont-btn" onClick={onOpenContact}>Contact Us</button>
         </div>
       </div>
