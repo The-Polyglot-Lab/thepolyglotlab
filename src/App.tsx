@@ -1,23 +1,18 @@
 import { useState, useRef } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import CircuitBackground from './components/CircuitBackground';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero'
-import Problemsolution from './components/Problemsolution';
-import Products from './components/Products';
-import Whyus from './components/Whyus';
-import Testimonials from './components/Testimonials';
-import Technology from './components/Technology';
-import Footer from './components/Footer';
-import OurStory from './components/OurStory';
+import LayeredBackground from './components/LayeredBackground';
 import Modal from './components/Modal';
 import ContactForm from './components/ContactForm';
-//import Muthurglot from './components/Muthurglot';
-import Whatwedo from './components/Whatwedo';
-import CallToAction from './components/CallToAction';
-import Blog from './components/Blog';
 import FloatingWidget from './components/FloatingWidget';
+import MainSections from './components/MainSections';
+import Blog from './components/Blog';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import AboutUs from './components/AboutUs';
+import Services from './components/Services';
+
+type ActiveSection = 'main' | 'about' | 'services';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -26,36 +21,31 @@ function App() {
     const productsRef = useRef<HTMLDivElement | null>(null);
     const footerRef = useRef<HTMLDivElement | null>(null);
     const [showModal, setShowModal] = useState(false);
+    const [activeSection, setActiveSection] = useState<ActiveSection>('main');
+
+    const handleSectionChange = (section: ActiveSection) => {
+        setActiveSection(section);
+    };
 
   return (
     <>
-      <CircuitBackground />
+      <LayeredBackground activeSection={activeSection} />
       <Navbar 
         ourStoryRef={ourStoryRef}
         testimonialsRef={testimonialsRef}
         productsRef={productsRef}
         footerRef={footerRef}
-        onOpenContact={() => setShowModal(true)} 
+        onSectionChange={handleSectionChange}
       />
-      <main className="main-content">
-        <Hero productsRef={productsRef} ourStoryRef={ourStoryRef}/>
-        <Problemsolution/>
-        <Whatwedo/>
-        <Blog />
-        <Technology/>
-        <Products ref={productsRef}/>
-        <Whyus footerRef={footerRef}/>
-        <Testimonials ref={testimonialsRef}/>
-        <CallToAction/>
-        
-        <OurStory ref={ourStoryRef}/>
-      </main>
+      {activeSection === 'main' && <MainSections />}
+      {activeSection === 'about' && <AboutUs />}
+      {activeSection === 'services' && <Services />}
+      <Footer onContactClick={() => setShowModal(true)} />      
+      {/*<Blog />*/}
       <FloatingWidget />
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ContactForm />
       </Modal>
-      <Footer ref={footerRef} onContactClick={() => setShowModal(true)}/>
-      {/* <Muthurglot/> */}
     </>
   )
 }

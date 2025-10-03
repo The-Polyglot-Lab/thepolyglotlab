@@ -1,3 +1,55 @@
+# The Polyglot Lab - Robots.txt
+# AI-Powered Software & Automation Services
+# https://thepolyglotlab.com
+
+# Allow all search engines to crawl the site
 User-agent: *
+
+# Allow access to main content
 Allow: /
-Sitemap: /sitemap.xml 
+Allow: /#about
+Allow: /#services
+Allow: /#contact
+Allow: /#story
+Allow: /#technology
+Allow: /#testimonials
+
+# Block access to development and sensitive files
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /backend/
+Disallow: /muthurglot/
+Disallow: *.log
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /tsconfig.json
+Disallow: /vite.config.ts
+Disallow: /eslint.config.js
+
+# Block access to temporary and cache files
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /.env
+Disallow: /.env.local
+Disallow: /.env.development
+Disallow: /.env.production
+
+# Allow access to important assets
+Allow: /assets/
+Allow: /public/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
+Allow: /*.ico
+Allow: /*.pdf
+
+# Sitemap location
+Sitemap: https://thepolyglotlab.com/sitemap.xml
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1 
