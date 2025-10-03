@@ -358,6 +358,38 @@
   transform: translateY(-2px);
 }
 
+/* Footer Legal Links */
+.footer-legal-links {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.privacy-link-btn {
+  background: none;
+  border: 1px solid rgba(79, 255, 210, 0.3);
+  color: #4FFFD2;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Orbitron', system-ui, sans-serif;
+  text-shadow: 0 0 8px rgba(79, 255, 210, 0.3);
+}
+
+.privacy-link-btn:hover {
+  background: rgba(79, 255, 210, 0.1);
+  border-color: rgba(79, 255, 210, 0.6);
+  box-shadow: 0 4px 12px rgba(79, 255, 210, 0.2);
+}
+
+.privacy-link-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 255, 210, 0.5);
+}
+
 /* ICO Registration Text */
 .ico-registration {
   font-size: 0.75rem;

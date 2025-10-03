@@ -4,9 +4,10 @@ import "../styles/Footer.css";
 
 interface FooterProps {
   onContactClick: () => void;
+  onPrivacyClick: () => void;
 }
 
-const Footer = forwardRef<HTMLDivElement, FooterProps>(({ onContactClick }, ref) => {
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({ onContactClick, onPrivacyClick }, ref) => {
   const localRef = useRef<HTMLDivElement | null>(null);
   const setRefs = (node: HTMLDivElement | null) => {
     localRef.current = node;
@@ -90,8 +91,15 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ onContactClick }, ref)
       </div>
 
       {/* Footer bottom line */}
+      <div className="footer-legal-links">
+          <button className="privacy-link-btn" onClick={onPrivacyClick}>
+            Privacy Policy
+          </button>
+        </div>
       <div className="footer-bottom">
-        <span>© {new Date().getFullYear()} The Polyglot Lab LTD · All Rights Reserved · Human first. Coffee powered. AI assisted.</span>
+        <span>
+          © {new Date().getFullYear()} The Polyglot Lab LTD · All Rights Reserved · Human first. Coffee powered. AI assisted.
+        </span>
         <p className="ico-registration">
           <strong>ICO Registered</strong> – The Polyglot Lab Ltd is registered with the Information Commissioner's Office (ICO) under the Data Protection Act 2018.
         </p>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LayeredBackground from './components/LayeredBackground';
 import Modal from './components/Modal';
 import ContactForm from './components/ContactForm';
+import PrivacyModal from './components/Privacy';
 import FloatingWidget from './components/FloatingWidget';
 import MainSections from './components/MainSections';
 import Blog from './components/Blog';
@@ -21,6 +22,7 @@ function App() {
     const productsRef = useRef<HTMLDivElement | null>(null);
     const footerRef = useRef<HTMLDivElement | null>(null);
     const [showModal, setShowModal] = useState(false);
+    const [showPrivacyModal, setShowPrivacyModal] = useState(false);
     const [activeSection, setActiveSection] = useState<ActiveSection>('main');
 
     const handleSectionChange = (section: ActiveSection) => {
@@ -40,12 +42,19 @@ function App() {
       {activeSection === 'main' && <MainSections />}
       {activeSection === 'about' && <AboutUs />}
       {activeSection === 'services' && <Services />}
-      <Footer onContactClick={() => setShowModal(true)} />      
+      <Footer 
+        onContactClick={() => setShowModal(true)} 
+        onPrivacyClick={() => setShowPrivacyModal(true)}
+      />      
       {/*<Blog />*/}
       <FloatingWidget />
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
         <ContactForm />
       </Modal>
+      <PrivacyModal 
+        isOpen={showPrivacyModal} 
+        onClose={() => setShowPrivacyModal(false)} 
+      />
     </>
   )
 }
