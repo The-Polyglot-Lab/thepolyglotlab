@@ -38,7 +38,7 @@ export default function TechStackShowcase() {
         </p>
         <div className="tech-grid">
             {stack.map((item, index) => (
-            <div key={index} className="tech-item">
+            <div key={index} className="tech-item-icons">
                 <img src={item.icon} alt={item.name} className="tech-icon" />
                 <span>{item.name}</span>
             </div>

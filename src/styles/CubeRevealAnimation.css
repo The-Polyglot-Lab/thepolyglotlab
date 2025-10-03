@@ -1,0 +1,504 @@
+/* Cube Reveal Animation Styles */
+.cube-reveal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0a0f1a 0%, #1a1f2e 50%, #0f1419 100%);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cube-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
+  gap: 2px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.cube {
+  background: linear-gradient(45deg, #4FFFD2, #C084FC);
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 
+    0 0 10px rgba(79, 255, 210, 0.6),
+    0 0 20px rgba(79, 255, 210, 0.4),
+    inset 0 0 10px rgba(192, 132, 252, 0.3);
+  transform-style: preserve-3d;
+}
+
+
+/* Menu Content Styles */
+.menu-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  background: rgba(10, 15, 26, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(79, 255, 210, 0.2);
+  border-radius: 20px;
+  margin: 20px;
+  box-shadow: 
+    0 0 50px rgba(79, 255, 210, 0.3),
+    inset 0 0 50px rgba(192, 132, 252, 0.1);
+  padding: 60px;
+  gap: 80px;
+  overflow: visible;
+}
+
+/* Close Button Styles */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  z-index: 20;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FFFFFF;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.close-line {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.close-line:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.close-line:nth-child(2) {
+  transform: rotate(-45deg);
+}
+
+/* Left side - Navigation */
+.menu-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-logo {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.menu-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Right side - Contact Details */
+.menu-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.contact-details {
+  width: 100%;
+  overflow: visible;
+}
+
+.contact-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4FFFD2;
+  margin-bottom: 40px;
+  text-shadow: 0 0 20px rgba(79, 255, 210, 0.6);
+}
+
+.contact-info {
+  margin-bottom: 40px;
+  overflow: visible;
+}
+
+.contact-item {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.contact-item strong {
+  color: #4FFFD2;
+  font-weight: 600;
+}
+
+.contact-item a {
+  color: #C084FC;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #4FFFD2;
+  text-shadow: 0 0 10px rgba(79, 255, 210, 0.6);
+}
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(79, 255, 210, 0.1);
+  border: 2px solid rgba(79, 255, 210, 0.3);
+  border-radius: 50%;
+  color: #4FFFD2;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: rgba(79, 255, 210, 0.2);
+  border-color: #4FFFD2;
+  color: #FFFFFF;
+  box-shadow: 0 1px 5px rgba(79, 255, 210, 0.3);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.menu-item-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Bigger Links for Menu Items */
+.menu-item-wrapper button {
+  background: none;
+  border: none;
+  color: #4FFFD2;
+  font-family: 'Orbitron', monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  text-align: left;
+  position: relative;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.menu-item-wrapper button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #4FFFD2, #C084FC);
+  transition: width 0.3s ease;
+}
+
+.menu-item-wrapper button:hover {
+  color: #FFFFFF;
+  transform: translateX(10px);
+}
+
+.menu-item-wrapper button:hover::after {
+  width: 100%;
+}
+
+.menu-item-wrapper button:active {
+  transform: translateX(5px);
+}
+
+/* Glitch effect on hover */
+.menu-item-wrapper button:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cube-grid {
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    gap: 1.5px;
+    padding: 8px;
+  }
+  
+  .menu-content {
+    margin: 15px;
+    padding: 50px;
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cube-grid {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 1px;
+    padding: 5px;
+  }
+  
+  .menu-content {
+    margin: 10px;
+    border-radius: 15px;
+    padding: 35px;
+    gap: 35px;
+    flex-direction: column;
+  }
+  
+  .menu-left {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .menu-right {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .menu-logo {
+    margin-bottom: 25px;
+    justify-content: center;
+  }
+  
+  .menu-logo-img {
+    height: 55px;
+  }
+  
+  .menu-navigation {
+    gap: 22px;
+  }
+  
+  .menu-item-wrapper button {
+    font-size: 1.52rem;
+    padding: 9.6px 0;
+    text-align: center;
+    letter-spacing: 2px;
+  }
+  
+  .contact-title {
+    font-size: 1.4rem;
+    margin-bottom: 25px;
+  }
+  
+  .contact-item {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cube-grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+  
+  .menu-content {
+    margin: 8px;
+    border-radius: 12px;
+    padding: 25px;
+    gap: 25px;
+  }
+  
+  .menu-logo-img {
+    height: 45px;
+  }
+  
+  .menu-navigation {
+    gap: 18px;
+  }
+  
+  .menu-item-wrapper button {
+    font-size: 1.28rem;
+    padding: 8px 0;
+    letter-spacing: 1.6px;
+  }
+  
+  .contact-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-item {
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+  }
+  
+  .social-links {
+    gap: 12px;
+  }
+  
+  .social-link {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .social-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .cube-grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+  }
+  
+  .menu-content {
+    margin: 5px;
+    border-radius: 10px;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .menu-logo-img {
+    height: 40px;
+  }
+  
+  .menu-navigation {
+    gap: 15px;
+  }
+  
+  .menu-item-wrapper button {
+    font-size: 1.12rem;
+    padding: 6.4px 0;
+    letter-spacing: 1.2px;
+  }
+  
+  .contact-title {
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+  }
+  
+  .contact-item {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+  
+  .social-links {
+    gap: 10px;
+  }
+  
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .social-icon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Performance optimizations */
+.cube {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.menu-content {
+  will-change: transform, opacity;
+}
+
+.cyberpunk-nav-link {
+  will-change: transform, box-shadow;
+}

@@ -16,19 +16,99 @@
   /* margin-right: auto; */
 }
 
-/* Mobile responsive why-polyglot-section */
+/* Mobile responsive cta-section */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding: 3.5rem 1.5rem;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .section-heading {
+    font-size: clamp(2rem, 3vw, 2.3rem);
+  }
+  
+  .manifesto {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+  }
+}
+
 @media (max-width: 768px) {
   .cta-section {
     padding: 3rem 1rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
     max-width: 100%;
+  }
+  
+  .section-heading {
+    font-size: clamp(1.8rem, 3vw, 2.1rem);
+    margin-bottom: 0.875rem;
+  }
+  
+  .manifesto {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    margin-bottom: 1.5rem;
+  }
+  
+  .get-in-touch-wrapper {
+    margin-top: 2rem;
+  }
+  
+  .cta-button {
+    padding: 0.7rem 1.75rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
   .cta-section {
-    padding: 2rem 0.75rem;
+    padding: 2.5rem 0.75rem;
     margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section-heading {
+    font-size: clamp(1.6rem, 3vw, 1.9rem);
+    margin-bottom: 0.75rem;
+  }
+  
+  .manifesto {
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    margin-bottom: 1.25rem;
+  }
+  
+  .get-in-touch-wrapper {
+    margin-top: 1.75rem;
+  }
+  
+  .cta-button {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    max-width: 280px;
+    overflow: visible;
+  }
+}
+
+@media (max-width: 360px) {
+  .cta-section {
+    padding: 2rem 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .section-heading {
+    font-size: clamp(1.4rem, 3vw, 1.7rem);
+  }
+  
+  .manifesto {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+  }
+  
+  .cta-button {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
   }
 }
 

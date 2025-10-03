@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
 
 .navbar {
-  background: #243B39;
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -11,17 +12,19 @@
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  height: 70px;
+  height: 100px;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 40px rgba(0, 240, 192, 0.3); /* glowy mint blue */
+  transition: background-color 0.3s ease;
 }
 
 
 /* When scrolled down */
 .navbar.navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(36, 59, 57, 0.5);
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -29,6 +32,7 @@
   display: flex;
   gap: 1rem;
   position: relative;
+  height: 100%;
   padding-top: 10px;
   padding-right: 10px;
   color: #66F2E4;
@@ -54,6 +58,17 @@
   gap: 12px;
   text-decoration: none;
   height: 100%;
+  position: relative;
+  z-index: 1; /* above circuit overlay */
+  outline: none; /* Remove focus outline */
+}
+
+.logo-brand:focus {
+  outline: none; /* Remove focus outline */
+}
+
+.logo-brand:active {
+  outline: none; /* Remove focus outline */
 }
 
 .logo-img {
@@ -63,10 +78,133 @@
   align-self: center;
   object-fit: contain;
   display: block;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.logo-img.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+.logo-img.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Circuit Animation Styles */
+.circuit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: none;
+  width: 220px; /* increased width for glow padding */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  padding-right: 10px; /* extra padding for glow effect */
+}
+
+.circuit-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.circuit-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.circuit-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0 8px #4FFFD2);
+}
+
+.circuit-path {
+  fill: none;
+  stroke: #4FFFD2;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 1; /* restored full brightness */
+  /* Normalize to 100 using pathLength on SVG. Animate left->right in 2s. */
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: circuitDraw 2s linear forwards;
+}
+
+.circuit-path-1 { animation-delay: 0s; }
+.circuit-path-2 { animation-delay: 0.1s; }
+.circuit-path-3 { animation-delay: 0.2s; }
+.circuit-path-4 { animation-delay: 0.3s; }
+.circuit-path-5 { animation-delay: 0.4s; }
+
+.circuit-node {
+  fill: #4FFFD2;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #4FFFD2);
+  animation: nodeGlow 0.5s ease-in-out forwards;
+}
+
+.circuit-node-1 { animation-delay: 2.05s; }
+.circuit-node-2 { animation-delay: 2.15s; }
+.circuit-node-3 { animation-delay: 2.25s; }
+.circuit-node-4 { animation-delay: 2.35s; }
+.circuit-node-5 { animation-delay: 2.45s; }
+
+@keyframes circuitDraw {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes nodeGlow {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Continuous glow animation for visible circuits */
+.circuit-overlay:not(.hidden) .circuit-path {
+  animation: circuitDraw 2s linear forwards, circuitPulse 3s ease-in-out infinite 2s;
+}
+
+.circuit-overlay:not(.hidden) .circuit-node {
+  animation: nodeGlow 0.5s ease-in-out forwards, nodePulse 2s ease-in-out infinite 1.6s;
+}
+
+@keyframes circuitPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px #4FFFD2);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px #4FFFD2) drop-shadow(0 0 18px rgba(79, 255, 210, 0.3));
+  }
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px #4FFFD2);
+  }
+  50% {
+    filter: drop-shadow(0 0 8px #4FFFD2) drop-shadow(0 0 12px rgba(79, 255, 210, 0.8));
+  }
 }
 
 .logo-text {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Orbitron', system-ui, sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   background: linear-gradient(to right, #4FFFD2, #C084FC); /* Mint to purple */
@@ -87,7 +225,7 @@
   background: none;
   border: none;
   color: #FFFFFF;
-  font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Orbitron', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   cursor: pointer;
   padding: 8px 16px;
@@ -96,6 +234,214 @@
 }
 .nav-link-btn:hover {
   text-shadow: 0 0 15px rgba(94, 234, 212, 0.6), 0 0 12px rgba(94, 234, 212, 0.3);
+}
+
+/* Hamburger Menu Styles - Always Visible */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+  outline: none;
+  box-shadow: none;
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu.always-visible {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  background: rgba(10, 15, 26, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(79, 255, 210, 0.3);
+  border-right: none;
+  border-radius: 12px 0 0 12px;
+  padding: 15px 0 15px 15px;
+  box-shadow: 0 0 20px rgba(79, 255, 210, 0.2);
+  width: 180px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 5px;
+  transform: translateX(0);
+  animation: slideInFromRight 1s ease-out forwards;
+  transition: all 0.3s ease;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.hamburger-menu.always-visible:hover {
+  background: rgba(10, 15, 26, 0.9);
+  border-color: #4FFFD2;
+  box-shadow: 0 0 30px rgba(79, 255, 210, 0.4);
+  transform: translateX(-20px) scale(1.02);
+  width: 200px;
+}
+
+.hamburger-menu:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.hamburger-menu:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.hamburger-line {
+  width: 20px;
+  height: 2px;
+  background-color: #FFFFFF;
+  transition: all 0.3s ease;
+  transform-origin: center;
+  display: block;
+}
+
+.hamburger-menu.always-visible .hamburger-line {
+  background-color: #FFFFFF;
+  width: 22px;
+  height: 3px;
+}
+
+.hamburger-line.active:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-line.active:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.active:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Cyberpunk Navigation Link Styles */
+.cyberpunk-nav-link {
+  position: relative;
+  background: linear-gradient(45deg, transparent, rgba(79, 255, 210, 0.1), transparent);
+  border: 2px solid rgba(79, 255, 210, 0.3);
+  color: #4FFFD2;
+  font-family: 'Orbitron', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 20px 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  overflow: hidden;
+  min-width: 250px;
+  text-align: center;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 
+    0 0 20px rgba(79, 255, 210, 0.2),
+    inset 0 0 20px rgba(192, 132, 252, 0.1);
+}
+
+.cyberpunk-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(79, 255, 210, 0.4), transparent);
+  transition: left 0.5s ease;
+}
+
+.cyberpunk-nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(192, 132, 252, 0.1) 50%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cyberpunk-nav-link:hover {
+  border-color: #4FFFD2;
+  color: #FFFFFF;
+  box-shadow: 
+    0 0 30px rgba(79, 255, 210, 0.5),
+    0 0 60px rgba(79, 255, 210, 0.3),
+    inset 0 0 30px rgba(192, 132, 252, 0.2);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.cyberpunk-nav-link:hover::before {
+  left: 100%;
+}
+
+.cyberpunk-nav-link:hover::after {
+  opacity: 1;
+}
+
+.cyberpunk-nav-link:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Glitch effect on hover */
+.cyberpunk-nav-link:hover {
+  animation: glitch 0.3s ease-in-out;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+    filter: hue-rotate(90deg);
+  }
+  20% {
+    transform: translate(2px, -2px);
+    filter: hue-rotate(180deg);
+  }
+  30% {
+    transform: translate(-2px, -2px);
+    filter: hue-rotate(270deg);
+  }
+  40% {
+    transform: translate(2px, 2px);
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    transform: translate(0);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.blog-btn {
+  margin-right: 20px;
 }
 
 .nav-link-cont-btn {
@@ -132,54 +478,125 @@
   
 }
 
+/* Hide desktop nav on all screen sizes */
+.desktop-nav {
+  display: none;
+}
+
+/* Mobile responsive navbar */
+@media (max-width: 1024px) {
+  .navbar {
+    height: 80px;
+  }
+  
+  .logo-img {
+    height: 40px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+  
+  .nav-container {
+    padding: 0 1rem;
+  }
+  
+  .logo-img {
+    height: 36px;
+  }
+  
   .logo-text {
     font-size: 1rem;
   }
+  
+  .hamburger-menu.always-visible {
+    top: 15px;
+    right: 0;
+    width: 140px;
+    height: 55px;
+    padding: 10px 0 10px 10px;
+    transform: translateX(0);
+    align-items: flex-start;
+    background: rgba(10, 15, 26, 0.9);
+  }
+  
+  .hamburger-menu.always-visible:hover {
+    transform: translateX(-20px) scale(1.02);
+    width: 160px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    height: 60px;
+  }
+  
   .nav-container {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding: 0 0.75rem;
   }
-  .nav-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    justify-content: flex-end;
-    align-items: stretch;
-    width: 100%;
-    min-width: 0;
-    margin-left: auto;
-    overflow: visible;
+  
+  .logo-img {
+    height: 32px;
   }
-  .nav-link-btn, .nav-link-cont-btn {
+  
+  .logo-text {
     font-size: 0.9rem;
-    padding: 0.3rem 0.6rem;
-    min-width: 70px;
-    max-width: 120px;
-    white-space: nowrap;
-    margin: 0;
-    height: auto;
-    box-sizing: border-box;
-    flex: 1 1 0;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    align-items: center;
-    justify-content: center;
-    display: flex;
   }
   
-  /* Hide Blog button on mobile */
-  .blog-btn {
-    display: none !important;
+  .hamburger-menu.always-visible {
+    top: 10px;
+    right: 0;
+    width: 120px;
+    height: 50px;
+    padding: 8px 0 8px 8px;
+    transform: translateX(0);
   }
   
-  /* Hide Success Stories if not enough space */
-  @media (max-width: 430px) {
-    .nav-link-btn:nth-child(2) {
-      display: none;
-    }
-    .nav-link-btn:nth-child(1) {
-      display: none;
-    }
+  .hamburger-menu.always-visible:hover {
+    transform: translateX(-15px) scale(1.02);
+    width: 135px;
+  }
+  
+  .hamburger-line {
+    width: 18px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    height: 55px;
+  }
+  
+  .nav-container {
+    padding: 0 0.5rem;
+  }
+  
+  .logo-img {
+    height: 28px;
+  }
+  
+  .logo-text {
+    font-size: 0.8rem;
+  }
+  
+  .hamburger-menu.always-visible {
+    top: 8px;
+    right: 0;
+    width: 110px;
+    height: 45px;
+    padding: 6px 0 6px 6px;
+    transform: translateX(0);
+  }
+  
+  .hamburger-line {
+    width: 16px;
+    height: 1.5px;
   }
 }

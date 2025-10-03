@@ -17,6 +17,7 @@
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16/9;
+  cursor: pointer;
 }
 
 .video-element {
@@ -161,6 +162,73 @@
   cursor: pointer;
 }
 
+.fullscreen-btn {
+  background: rgba(79, 255, 210, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  margin-left: auto;
+}
+
+.fullscreen-btn:hover {
+  background: rgba(79, 255, 210, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(79, 255, 210, 0.5);
+}
+
+/* Top-right compact fullscreen button (used in small cards) */
+.fullscreen-btn-topright {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  background: rgba(79, 255, 210, 0.9);
+  color: #000;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.video-wrapper:hover .fullscreen-btn-topright {
+  opacity: 1;
+  background: rgba(79, 255, 210, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.fullscreen-btn-topright:hover {
+  background: rgba(79, 255, 210, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .video-wrapper {
@@ -190,6 +258,20 @@
   
   .volume-slider {
     width: 50px;
+  }
+  
+  .fullscreen-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+  
+  .fullscreen-btn-topright {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+    top: 10px;
+    right: 10px;
   }
 }
 
@@ -222,6 +304,20 @@
   .volume-slider {
     width: 40px;
   }
+  
+  .fullscreen-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .fullscreen-btn-topright {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+    top: 8px;
+    right: 8px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -252,6 +348,20 @@
   .volume-slider {
     width: 35px;
   }
+  
+  .fullscreen-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .fullscreen-btn-topright {
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    top: 6px;
+    right: 6px;
+  }
 }
 
 /* Fullscreen support */
@@ -263,6 +373,118 @@
   width: 48px;
   height: 48px;
   font-size: 1.4rem;
+}
+
+.video-wrapper:fullscreen .fullscreen-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+}
+
+.video-wrapper:fullscreen .fullscreen-btn-topright {
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+  top: 15px;
+  right: 15px;
+}
+
+/* Fullscreen overlay for play/pause */
+.fullscreen-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.fullscreen-overlay:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.fullscreen-play-pause-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.fullscreen-overlay:hover .fullscreen-play-pause-btn {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(79, 255, 210, 0.9);
+  color: #000;
+}
+
+/* Show button briefly when video state changes */
+.fullscreen-overlay.show-button .fullscreen-play-pause-btn {
+  opacity: 1;
+  transform: scale(1);
+  background: rgba(79, 255, 210, 0.9);
+  color: #000;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .fullscreen-overlay {
+    /* Ensure overlay covers entire fullscreen area on mobile */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 4;
+  }
+  
+  .fullscreen-play-pause-btn {
+    width: 100px;
+    height: 100px;
+    font-size: 2.5rem;
+    /* Always show button on mobile for better touch interaction */
+    opacity: 0.3;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .fullscreen-overlay.show-button .fullscreen-play-pause-btn {
+    opacity: 1;
+    background: rgba(79, 255, 210, 0.9);
+    color: #000;
+  }
+  
+  /* Mobile hover alternatives */
+  .fullscreen-overlay:active .fullscreen-play-pause-btn {
+    opacity: 1;
+    transform: scale(1.1);
+    background: rgba(79, 255, 210, 0.9);
+    color: #000;
+  }
+}
+
+@media (max-width: 480px) {
+  .fullscreen-play-pause-btn {
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
+  }
 }
 
 /* Accessibility improvements */
