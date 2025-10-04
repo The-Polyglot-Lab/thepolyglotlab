@@ -13,7 +13,7 @@ export default function VideoDemo() {
       <div className="video-showcase">
         <div className="video-item">
           <VideoPlayer 
-            src="../../public/EN-New.mp4"
+            src="https://tpl-assets.s3.us-east-1.amazonaws.com/EN-New.mp4"
             title="Escalation Ninja Demo"
             width={800}
             height={450}
