@@ -8,25 +8,25 @@ const UseCases: React.FC = () => {
       id: 'jane',
       title: 'Jane\'s Workflow',
       description: 'See how Jane automates her daily tasks',
-      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Jane.mov'
+      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Jane.mp4'
     },
     {
       id: 'mark',
       title: 'Mark\'s Process',
       description: 'Watch Mark streamline his operations',
-      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Mark.mov'
+      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Mark.mp4'
     },
     {
       id: 'sarah',
       title: 'Sarah\'s Solution',
       description: 'Discover Sarah\'s time-saving techniques',
-      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Sarah.mov'
+      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Sarah.mp4'
     },
     {
       id: 'bridget',
       title: 'Bridget\'s Breakthrough',
       description: 'Learn from Bridget\'s automation success',
-      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Bridget.mov'
+      videoUrl: 'https://tpl-assets.s3.us-east-1.amazonaws.com/EN-Bridget.mp4'
     }
   ];
 
