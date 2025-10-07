@@ -19,7 +19,7 @@ const CubeRevealAnimation: React.FC<CubeRevealAnimationProps> = ({
 }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [gridSize, setGridSize] = useState({ rows: 15, cols: 15 });
-  const [playLaserSound] = useSound('/8bit_laser_1.wav');
+  const [playLaserSound] = useSound('/8bit_laser_1.wav', { volume: 0.2 });
 
   // Calculate responsive grid size
   useEffect(() => {
