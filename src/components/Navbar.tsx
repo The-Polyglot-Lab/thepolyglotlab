@@ -192,6 +192,18 @@ function Navbar({ ourStoryRef, testimonialsRef, productsRef, footerRef, onSectio
           >
             Blog
           </motion.button>
+          <motion.button 
+            className="cyberpunk-nav-link" 
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsCubeAnimationComplete(false);
+              window.open('https://consultancy.thepolyglotlab.com', '_blank');
+            }}
+            whileHover={{ x: 10 }}
+            whileTap={{ x: 5 }}
+          >
+            Consultancy Services
+          </motion.button>
         </CubeRevealAnimation>
       </div>
     </nav>
