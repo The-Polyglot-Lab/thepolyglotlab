@@ -197,7 +197,7 @@ function Navbar({ ourStoryRef, testimonialsRef, productsRef, footerRef, onSectio
             onClick={() => {
               setIsMobileMenuOpen(false);
               setIsCubeAnimationComplete(false);
-              window.open('https://consultancy.thepolyglotlab.com', '_blank');
+              window.open('https://consulting.thepolyglotlab.com', '_blank');
             }}
             whileHover={{ x: 10 }}
             whileTap={{ x: 5 }}
