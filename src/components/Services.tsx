@@ -103,7 +103,7 @@ const Services: React.FC = () => {
             we'll help you build fast and scale smart.
           </p>
           <a
-            href="https://calendly.com/yor-thepolyglotlab/15min-meeting"
+            href="https://calendly.com/yor-thepolyglotlab/30min-meeting"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary cta-button"

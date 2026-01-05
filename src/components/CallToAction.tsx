@@ -10,7 +10,7 @@ const CallToAction = () => {
                 Just a 15-minute chat to see if we’re the right fit.
             </p>
             <a
-                href="https://calendly.com/yor-thepolyglotlab/15min-meeting"
+                href="https://calendly.com/yor-thepolyglotlab/30min-meeting"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta-button"
