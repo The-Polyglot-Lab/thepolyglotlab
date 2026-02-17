@@ -1,107 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Homepage - Highest Priority -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thepolyglotlab.com/</loc>
-    <lastmod>2024-12-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://thepolyglotlab.com/og-image.jpg</image:loc>
-      <image:title>The Polyglot Lab - AI-Powered Software & Automation</image:title>
-      <image:caption>Invisible software. Visible results. We build AI workflows, apps, CRM/DAM, and automations that make technology speak your language.</image:caption>
-    </image:image>
   </url>
-
-  <!-- Main Sections -->
   <url>
-    <loc>https://thepolyglotlab.com/#about</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://thepolyglotlab.com/#services</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- About Us Sub-sections -->
-  <url>
-    <loc>https://thepolyglotlab.com/#story</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://thepolyglotlab.com/#technology</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://thepolyglotlab.com/#testimonials</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Main Sections Sub-sections -->
-  <url>
-    <loc>https://thepolyglotlab.com/#featured</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://thepolyglotlab.com/about</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://thepolyglotlab.com/#capabilities</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://thepolyglotlab.com/#why</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://thepolyglotlab.com/#cta-home</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- Contact Section -->
-  <url>
-    <loc>https://thepolyglotlab.com/#contact</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- External Blog (if applicable) -->
-  <url>
-    <loc>https://blog.thepolyglotlab.com/blog/</loc>
-    <lastmod>2024-12-19</lastmod>
+    <loc>https://thepolyglotlab.com/services</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Calendly Integration -->
   <url>
-    <loc>https://calendly.com/yor-thepolyglotlab/30min-meeting</loc>
-    <lastmod>2024-12-19</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://thepolyglotlab.com/blog</loc>
+    <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
-
-</urlset> 
+  <url>
+    <loc>https://thepolyglotlab.com/contact</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://consulting.thepolyglotlab.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://blog.thepolyglotlab.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>
