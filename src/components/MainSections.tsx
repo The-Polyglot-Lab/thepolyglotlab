@@ -59,10 +59,25 @@ const MainSections: React.FC = () => {
                 </a>
               </div>
             </div>
-            <div className="project-card"> 
-              <h3>EstateIntel</h3>
-              <p>Real estate insights made simple - ML price predictions, and more!</p>
-              <span className="under-development">Under Development</span>
+            <div
+              className="project-card"
+            >
+              <h3>Modulinc</h3>
+              <p>
+                Operational intelligence platform for SMEs — CRM, absence tracking, and business automation in one modular system.
+              </p>
+              <span className="under-development" >Currently in pilot with UK SMEs</span>
+              <div className="project-card-button">
+                <button type="button" className="btn-primary" onClick={() => window.open('https://modulinc.com/', '_blank', 'noopener,noreferrer')}>Get early access</button>
+                <a
+                  href="https://modulinc.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  Visit Modulinc
+                </a>
+              </div>
             </div>
             <div className="project-card"> 
               <h3>CliClo</h3>
