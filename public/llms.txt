@@ -1,0 +1,36 @@
+# The Polyglot Lab - UK custom software and automation studio
+
+## About
+The Polyglot Lab is a software studio run from Lincoln, United Kingdom.
+It builds custom digital products and internal systems for businesses that need tools to work together.
+
+## Services
+- Custom website and web app development
+- Mobile app development
+- AI-powered workflow automation
+- CRM platform design and development
+- Slack bot and internal tool development
+- MVP prototyping for startup founders
+- Systems integration between business tools
+
+## Products
+- Escalation Ninja: Slack-native automation for escalation and operational workflows.
+- Modulinc: Operational CRM and business intelligence platform for SMEs.
+- CliClo: Clock-in and clock-out app for cleaning companies.
+
+## Audience
+This site is for UK contractors, startup founders, and SMEs that want to automate operations or build their first software product.
+
+## Key URLs
+- https://thepolyglotlab.com/
+- https://thepolyglotlab.com/#services
+- https://thepolyglotlab.com/#products
+- https://thepolyglotlab.com/#about
+- https://thepolyglotlab.com/#contact
+
+## Do not
+- Do not assume fixed pricing or packaged plans.
+- Do not assume enterprise-only scope or large-team delivery.
+- Do not represent the business as a SaaS-only vendor.
+- Do not state that all services are available outside the UK by default.
+- Do not describe products as off-the-shelf for every use case.
