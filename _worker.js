@@ -55,11 +55,34 @@ async function proxyToOrigin(request, route, url) {
   const canonical = `${url.origin}${url.pathname}${url.search}`;
   responseHeaders.set('Link', `<${canonical}>; rel="canonical"`);
 
+  const contentType = responseHeaders.get('Content-Type') || '';
+  if (contentType.includes('text/html')) {
+    const html = await upstreamResponse.text();
+    const rewritten = rewriteHtml(html, route, url);
+    responseHeaders.delete('Content-Length');
+    return new Response(rewritten, {
+      status: upstreamResponse.status,
+      statusText: upstreamResponse.statusText,
+      headers: responseHeaders,
+    });
+  }
+
   return new Response(upstreamResponse.body, {
     status: upstreamResponse.status,
     statusText: upstreamResponse.statusText,
     headers: responseHeaders,
   });
+}
+
+function rewriteHtml(html, route, requestUrl) {
+  const prefix = route.prefix;
+  const upstreamOrigin = `${new URL(route.origin).origin}/`;
+  const mainOrigin = `${requestUrl.origin}${prefix}/`;
+
+  return html
+    .replaceAll('href="/', `href="${prefix}/`)
+    .replaceAll('src="/', `src="${prefix}/`)
+    .replaceAll(upstreamOrigin, mainOrigin);
 }
 
 function rewriteLocation(location, route, requestUrl) {
