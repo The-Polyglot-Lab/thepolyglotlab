@@ -80,8 +80,8 @@ function rewriteHtml(html, route, requestUrl) {
   const mainOrigin = `${requestUrl.origin}${prefix}/`;
 
   return html
-    .replaceAll('href="/', `href="${prefix}/`)
-    .replaceAll('src="/', `src="${prefix}/`)
+    .replace(/href="\/(?!blog\/|consulting\/)/g, `href="${prefix}/`)
+    .replace(/src="\/(?!blog\/|consulting\/)/g, `src="${prefix}/`)
     .replaceAll(upstreamOrigin, mainOrigin);
 }
 
