@@ -23,7 +23,7 @@ function matchesPrefix(pathname, prefix) {
 
 async function proxyToOrigin(request, route, url) {
   const originUrl = new URL(route.origin);
-  const upstreamPath = url.pathname.slice(route.prefix.length) || '/';
+  const upstreamPath = toUpstreamPath(url.pathname, route);
   const upstreamUrl = new URL(`${upstreamPath}${url.search}`, route.origin);
 
   const headers = new Headers(request.headers);
@@ -74,23 +74,63 @@ async function proxyToOrigin(request, route, url) {
   });
 }
 
+function toUpstreamPath(pathname, route) {
+  if (pathname === route.prefix || pathname === `${route.prefix}/`) {
+    return '/';
+  }
+
+  if (!pathname.startsWith(`${route.prefix}/`)) {
+    return pathname;
+  }
+
+  let rest = pathname.slice(route.prefix.length) || '/';
+
+  // Blog upstream serves at /post-slug, not /blog/post-slug
+  if (route.prefix === '/blog' && (rest === '/blog' || rest.startsWith('/blog/'))) {
+    rest = rest.slice('/blog'.length) || '/';
+  }
+
+  return rest;
+}
+
+function toMainPath(pathname, route) {
+  if (pathname === '/' || pathname === '') {
+    return route.prefix;
+  }
+
+  if (route.prefix === '/blog' && (pathname === '/blog' || pathname.startsWith('/blog/'))) {
+    pathname = pathname.slice('/blog'.length) || '/';
+  }
+
+  return `${route.prefix}${pathname}`;
+}
+
 function rewriteHtml(html, route, requestUrl) {
   const prefix = route.prefix;
-  const upstreamOrigin = `${new URL(route.origin).origin}/`;
-  const mainOrigin = `${requestUrl.origin}${prefix}/`;
+  const upstreamOrigin = new URL(route.origin).origin;
+  const mainBase = `${requestUrl.origin}${prefix}`;
 
-  return html
+  let result = html
     .replace(/href="\/(?!blog\/|consulting\/)/g, `href="${prefix}/`)
-    .replace(/src="\/(?!blog\/|consulting\/)/g, `src="${prefix}/`)
-    .replaceAll(upstreamOrigin, mainOrigin);
+    .replace(/src="\/(?!blog\/|consulting\/)/g, `src="${prefix}/`);
+
+  if (prefix === '/blog') {
+    result = result
+      .replaceAll(`${upstreamOrigin}/blog/`, `${mainBase}/`)
+      .replaceAll(`${upstreamOrigin}/`, `${mainBase}/`);
+  } else {
+    result = result.replaceAll(`${upstreamOrigin}/`, `${mainBase}/`);
+  }
+
+  return result;
 }
 
 function rewriteLocation(location, route, requestUrl) {
   try {
     const loc = new URL(location, route.origin);
     if (loc.origin === new URL(route.origin).origin) {
-      const path = loc.pathname === '/' ? '' : loc.pathname;
-      return `${requestUrl.origin}${route.prefix}${path}${loc.search}${loc.hash}`;
+      const path = toMainPath(loc.pathname, route);
+      return `${requestUrl.origin}${path}${loc.search}${loc.hash}`;
     }
   } catch {
     // ignore malformed Location values
